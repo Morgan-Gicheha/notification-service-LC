@@ -3,10 +3,14 @@ import json
 
 # available types -->> sms, email, telegram
 dummyPayload = {
-    "type": "sms",
-    "from": "xoxo",
+    "type": "telegram",
+    "from": "littleApp",
+    "message":"Hello world.",
     "to": [
-        "25479886xxxx",
+        "Little_Alerts",
+        "Little_Gicheha",
+        "Little_Morgab",
+        "Little_coder",
     ],
 }
 

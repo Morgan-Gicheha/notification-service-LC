@@ -1,5 +1,6 @@
 import pika, sys, os
-from classes import serviceSelector
+# from classes import serviceSelector
+from tools.rabbitMQ.classes import serviceSelector
 
 
 def main():
@@ -18,14 +19,3 @@ def main():
 
     print(" [*] Notification Service Listening...")
     channel.start_consuming()
-
-
-if __name__ == "__main__":
-    try:
-        main()
-    except KeyboardInterrupt:
-        print("Interrupted")
-        try:
-            sys.exit(0)
-        except SystemExit:
-            os._exit(0)
