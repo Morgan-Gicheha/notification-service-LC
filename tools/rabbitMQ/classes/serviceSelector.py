@@ -1,7 +1,7 @@
 import json
 
 from utillities.sms import sms
-# from utillities.email import email
+from utillities.email_ import processEmail
 from utillities.telegram import telegram
 
 class NotificationWorker:
@@ -44,6 +44,7 @@ class NotificationWorker:
             telegram(cleanPayload["message"],cleanPayload["to"])
         elif self.serviceType == "email".lower():
             # email()
+            processEmail(cleanPayload)
             pass
         else:
             print(f"[x]- Invalid notification service of {self.serviceType} was provided.")

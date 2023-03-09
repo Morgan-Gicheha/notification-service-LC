@@ -3,15 +3,10 @@ import json
 
 # available types -->> sms, email, telegram
 dummyPayload = {
-    "type": "telegram",
-    "from": "littleApp",
-    "message":"Hello world.",
-    "to": [
-        "Little_Alerts",
-        "Little_Gicheha",
-        "Little_Morgab",
-        "Little_coder",
-    ],
+    "type": "email",
+    "from": "noreply@little.bz",
+    "message": "Hello world.",
+    "to": ["morgangicheha4@gmail.com"],
 }
 
 
@@ -27,8 +22,11 @@ def publish(data):
         return
 
     channel.queue_declare(queue="notification")
-    channel.basic_publish(exchange="", routing_key="notification", body=json.dumps(data))
+    channel.basic_publish(
+        exchange="", routing_key="notification", body=json.dumps(data)
+    )
     print(" [x] Task published")
     connection.close()
+
 
 publish(dummyPayload)

@@ -1,3 +1,3 @@
 
 source venv/bin/activate
-python3 bootWorker.py
+pm2 reload server.config.js
