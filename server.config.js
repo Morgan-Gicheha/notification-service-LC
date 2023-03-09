@@ -1,7 +1,7 @@
 module.exports = {
   apps: [{
     name: 'API:NOTIFICATIONS:WORKER',
-    script: 'python3 tools/rabbitMQ/bootWorker.py',
+    script: 'python3 bootWorker.py',
     instances: '1',
     // exec_mode: 'cluster',
     watch: false,
